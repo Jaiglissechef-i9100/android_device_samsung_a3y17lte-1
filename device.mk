@@ -57,34 +57,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtfa98xx
 
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BOARD_HAS_QCA_BT_ROME := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-QCOM_BT_USE_BTNV := true
-QCOM_BT_USE_SMD_TTY := true
-
-# Fingerprint
-TARGET_SEC_FP_HAL_VARIANT := bauth
-
 PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-impl \
+    android.hardware.biometrics.fingerprint@2.1-service \
     mcDriverDaemon \
     fingerprint.exynos5 \
-    libbauthtzcommon_shim \
-    android.hardware.biometrics.fingerprint@2.1-impl \
-    android.hardware.biometrics.fingerprint@2.1-service
+    libbauthtzcommon_shim
 
 #  Light
 PRODUCT_PACKAGES += \
     AdvancedDisplay \
-    lights.universal7870 \
-    android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl \
+    lights.universal7870
 
 # NFC Packages
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
-    libnfc-nci \
-    libnfc_nci_jni \
     com.android.nfc_extras \
     NfcNci \
     Tag
@@ -95,9 +83,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-sec-hal.conf:system/vendor/etc/libnfc-sec-hal.conf \
     $(LOCAL_PATH)/configs/nfc/nfc_key:system/etc/nfc_key \
     $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/releasetools/nfc_scripts.sh:install/bin/nfc_scripts.sh \
-    $(LOCAL_PATH)/configs/nfc/libnfc-sec.conf.s3nrn81:system/vendor/etc/libnfc-sec.conf.s3nrn81
+    $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/vendor/etc/libnfc-brcm.conf
 
 #  Permission
 PRODUCT_COPY_FILES += \
@@ -127,34 +113,26 @@ PRODUCT_COPY_FILES += \
 TARGET_LD_SHIM_LIBS += \
     /system/lib/libbauthserver.so|/system/vendor/lib/libbauthtzcommon_shim.so
 
-# Wifi
-BOARD_HAVE_SAMSUNG_WIFI := true
-BOARD_HAS_QCOM_WLAN              := true
-BOARD_WLAN_DEVICE                := qcwcn
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-#WIFI_DRIVER_FW_PATH_AP           := "ap"
-#WIFI_DRIVER_FW_PATH_STA          := "sta"
-WIFI_DRIVER_FW_PATH_P2P         := "p2p"
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-WPA_SUPPLICANT_USE_HIDL          := true
-
+# Root
 PRODUCT_PACKAGES += \
-    init.wifi.rc
+    su
+
+# Wifi
+PRODUCT_PACKAGES += \
+    init.wifi.rc \
+    android.hardware.wifi@1.0-service \
     hostapd \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
+    wifiloader \
     wpa_supplicant \
     wpa_supplicant.conf \
-    wificond \
-    android.hardware.wifi@1.0-service
+    wificond
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/grippower.info:system/etc/firmware/wlan/grippower.info \
     $(LOCAL_PATH)/configs/wifi/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini \
     $(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/WCNSS_cfg.dat

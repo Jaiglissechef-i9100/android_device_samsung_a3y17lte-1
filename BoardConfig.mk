@@ -50,5 +50,27 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use dedicated /cache partition instead of /data/cache
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
 
-# Release tools extention
-TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)/releasetools
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAS_QCA_BT_ROME := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+QCOM_BT_USE_BTNV := true
+QCOM_BT_USE_SMD_TTY := true
+
+# Fingerprint
+TARGET_SEC_FP_HAL_VARIANT := bauth
+
+# Wifi
+BOARD_HAVE_SAMSUNG_WIFI := true
+BOARD_HAS_QCOM_WLAN              := true
+BOARD_WLAN_DEVICE                := qcwcn
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+#WIFI_DRIVER_FW_PATH_AP           := "ap"
+#WIFI_DRIVER_FW_PATH_STA          := "sta"
+WIFI_DRIVER_FW_PATH_P2P         := "p2p"
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+WPA_SUPPLICANT_USE_HIDL          := true
