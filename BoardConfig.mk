@@ -26,9 +26,6 @@ TARGET_INIT_VENDOR_LIB := libinit_a3y17lte
 # Path
 LOCAL_PATH := device/samsung/a3y17lte
 
-# inherit the splitted configs
-include $(LOCAL_PATH)/configs/board/*.mk
-
 # Hidl
 DEVICE_MANIFEST_FILE := device/samsung/a3y17lte/configs/manifest/manifest.xml
 
@@ -36,4 +33,22 @@ DEVICE_MANIFEST_FILE := device/samsung/a3y17lte/configs/manifest/manifest.xml
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
 
 # Inherit from the proprietary version
--include vendor/samsung/a3y17lte/BoardConfigVendor.mk
+include vendor/samsung/a3y17lte/BoardConfigVendor.mk
+
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos7870
+TARGET_KERNEL_CONFIG := lineage-a3y17lte_defconfig
+
+# Partition Sizes
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 39845888
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 3072000000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 209715200
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Use dedicated /cache partition instead of /data/cache
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
+
+# Release tools extention
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)/releasetools
