@@ -38,6 +38,7 @@ TARGET_SCREEN_HEIGHT := 1080
 
 # Audio
 PRODUCT_PACKAGES += \
+    libtfa98xx \
     audio_amplifier.universal7870 \
     libtinycompress
 
@@ -53,10 +54,7 @@ PRODUCT_PACKAGES += \
    audio_amplifier.universal7870 \
    libtinycompress
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libtfa98xx
-
+# Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-impl \
     android.hardware.biometrics.fingerprint@2.1-service \
