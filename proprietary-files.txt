@@ -1,7 +1,7 @@
   # Audio
-  etc/Tfa9896.cnt
   lib/libtfa98xx.so
-  
+  etc/Tfa9896.cnt
+
   # Bluetooth
   lib/libbt-vendor.so
   bin/wcnss_filter
@@ -10,30 +10,6 @@
   etc/bluetooth/bt_stack.conf
   etc/bluetooth/iop_bt.db
   etc/bluetooth/iop_device_list.conf
-  
-  # Wifi
-  etc/firmware/bdwlan30.bin
-  etc/firmware/bdwlan32.bin
-  etc/firmware/Data.msc
-  etc/firmware/nvm_tlv_1.3.bin
-  etc/firmware/nvm_tlv_2.1.bin
-  etc/firmware/nvm_tlv_3.0.bin
-  etc/firmware/nvm_tlv_3.2.bin
-  etc/firmware/nvm_tlv_tf_1.1.bin
-  etc/firmware/nvm_tlv.bin
-  etc/firmware/otp30.bin
-  etc/firmware/qwlan30_ibss.bin
-  etc/firmware/qwlan30.bin
-  etc/firmware/rampatch_tlv_1.3.tlv
-  etc/firmware/rampatch_tlv_2.1.tlv
-  etc/firmware/rampatch_tlv_3.0.tlv
-  etc/firmware/rampatch_tlv_3.2.tlv
-  etc/firmware/rampatch_tlv_tf_1.1.tlv
-  etc/firmware/rampatch_tlv.img
-  etc/firmware/utf30.bin
-  etc/firmware/utfbd30.bin
-  etc/firmware/utfbd32.bin
-  lib/modules/qca_cld/qca_cld_wlan.ko
 
   # Camera
   lib/hw/camera.universal7870.so:lib/hw/camera.vendor.universal7870.so
@@ -142,12 +118,10 @@
   lib/hw/sensorhubs.universal7870.so
   lib/libsensorhub.so
   lib/libsensorhubservice.so
-  
-  # NFC
-  etc/sec_s3nrn81_rfreg.bin         
+
+  # NFC     
   lib/hw/nfc_nci.universal7870.so
-  vendor/firmware/sec_s3nrn81_firmware.bin
-  etc/sec_s3nrn80_rfreg.bin         
+  etc/sec_s3nrn80_rfreg.bin 
   vendor/firmware/sec_s3nrn80_firmware.bin
 
   # Shim Libs
@@ -156,7 +130,7 @@
 
   # Surface Composer
   lib/hw/gralloc.exynos5.so
-  
+
   # NXP
   vendor/etc/nxp/speechassist/BargeIn/Tx_ControlParams_WIDEBAND_ANALOG_DOCK.txt
   vendor/etc/nxp/speechassist/BargeIn/Tx_ControlParams_WIDEBAND_BLUETOOTH_SCO_HEADSET.txt
@@ -292,3 +266,27 @@
   vendor/etc/nxp/voiceexperience/LVVEFS_Tx_Configuration.txt
   vendor/etc/nxp/AzControlParams_SPEAKER.txt
   vendor/etc/nxp/LVAZFS_Configuration.txt
+
+  # Wifi
+  etc/firmware/bdwlan30.bin
+  etc/firmware/bdwlan32.bin
+  etc/firmware/Data.msc
+  etc/firmware/nvm_tlv_1.3.bin
+  etc/firmware/nvm_tlv_2.1.bin
+  etc/firmware/nvm_tlv_3.0.bin
+  etc/firmware/nvm_tlv_3.2.bin
+  etc/firmware/nvm_tlv_tf_1.1.bin
+  etc/firmware/nvm_tlv.bin
+  etc/firmware/otp30.bin
+  etc/firmware/qwlan30_ibss.bin
+  etc/firmware/qwlan30.bin
+  etc/firmware/rampatch_tlv_1.3.tlv
+  etc/firmware/rampatch_tlv_2.1.tlv
+  etc/firmware/rampatch_tlv_3.0.tlv
+  etc/firmware/rampatch_tlv_3.2.tlv
+  etc/firmware/rampatch_tlv_tf_1.1.tlv
+  etc/firmware/rampatch_tlv.img
+  etc/firmware/utf30.bin
+  etc/firmware/utfbd30.bin
+  etc/firmware/utfbd32.bin
+  lib/modules/qca_cld/qca_cld_wlan.ko

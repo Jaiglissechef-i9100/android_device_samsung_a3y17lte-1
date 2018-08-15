@@ -72,29 +72,22 @@ void vendor_load_properties()
 		return;
 
     if (bootloader.find("A320FL") != std::string::npos) {
-
 	    /* SM-A320FL */
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320FL");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "a3xeltexc");
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/a3y17ltexc/a3y17lte:7.0/NRD90M/A320FLXXUBQI:user/release-keys");
         property_override("ro.build.description", "a3y17ltexc-user 7.0 NRD90M A320FLXXUBQI test-keys");
-
-
     }else if (bootloader.find("A320FX") != std::string::npos) { // the variant is A320F
-
 	    /* SM-A320F */
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320F");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "a3y17ltexx");
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/a3y17ltexx/a3y17lte:7.0/NRD90M/A320FXXU3CRD4:user/release-keys");
         property_override("ro.build.description", "a3y17ltexx-user 7.0 NRD90M A320FXXU3CRD4 test-keys");
-
     } else if (bootloader.find("A320Y") != std::string::npos) {
-
 	    /* SM-A320Y */
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320Y");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "a3y17ltedx");
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/a3y17ltedx/a3y17lte:7.0/NRD90M/A320YDXU1BQL1:user/release-keys");
         property_override("ro.build.description", "a3y17ltedx-user 7.0 NRD90M A320YDXU1BQL1 test-keys");
     }
-
 }
