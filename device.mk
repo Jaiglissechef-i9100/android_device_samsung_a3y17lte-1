@@ -102,10 +102,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.sec.feature.cover.nfc_authentication.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.sec.feature.cover.nfc_authentication.xml \
     $(LOCAL_PATH)/configs/permissions/com.sec.feature.nfc_authentication.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.sec.feature.nfc_authentication.xml
 
-# Shim
-TARGET_LD_SHIM_LIBS += \
-    /system/lib/libbauthserver.so|/system/vendor/lib/libbauthtzcommon_shim.so
-
 # Root
 PRODUCT_PACKAGES += \
     su
