@@ -3,13 +3,12 @@
   etc/Tfa9896.cnt
 
   # Bluetooth
-  lib/libbt-vendor.so
-  bin/wcnss_filter
-  etc/bluetooth/av_performance.conf
-  etc/bluetooth/bt_did.conf
-  etc/bluetooth/bt_stack.conf
-  etc/bluetooth/iop_bt.db
-  etc/bluetooth/iop_device_list.conf
+  vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+  vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+  vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+  lib/hw/com.qualcomm.qti.ant@1.0_vendor.so
+  vendor/lib/libbt-hidlclient.so
+  vendor/bin/wcnss_filter
 
   # Camera
   lib/hw/camera.universal7870.so:lib/hw/camera.vendor.universal7870.so
@@ -46,6 +45,9 @@
   lib/libbauthtzcommon.so
   lib/libegis_fp_normal_sensor_test.so
   lib/libsynaFpSensorTestNwd.so
+
+  # FM
+  vendor/lib/hw/android.hardware.broadcastradio@1.0-impl.so
 
   # GPS
   bin/gpsd

@@ -335,13 +335,6 @@ on nonencrypted
 
 on property:vold.decrypt=trigger_restart_framework
     mkdir /data/misc/mcRegistry 0775 system system
-
-# Bluetooth
-on property:wc_transport.start_hci=true
-    start start_hci_filter
-
-on property:wc_transport.start_hci=false
-     stop start_hci_filter
     
 on property:sys.sf.restart=1
      restart surfaceflinger
@@ -374,7 +367,7 @@ service iod /system/bin/iod
 service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user bluetooth
-    group bluetooth qcom_diag
+    group bluetooth diag system wakelock
     disabled
 
 on property:init.svc.bootanim=stopped
