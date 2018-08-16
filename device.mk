@@ -53,8 +53,12 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-impl \
     android.hardware.biometrics.fingerprint@2.1-service \
     mcDriverDaemon \
-    fingerprint.exynos5 \
-    libbauthtzcommon_shim
+    fingerprint.exynos5
+
+# FM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/fm/libfmq.so:system/lib/libfmq.so \
+    $(LOCAL_PATH)/configs/fm/libfmradio_jni.so:system/lib/libfmradio_jni.so
 
 #  Light
 PRODUCT_PACKAGES += \

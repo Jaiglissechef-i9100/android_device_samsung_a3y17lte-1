@@ -47,6 +47,8 @@
   lib/libsynaFpSensorTestNwd.so
 
   # FM
+  lib/libfmq.so
+  lib/libfmradio_jni.so
   vendor/lib/hw/android.hardware.broadcastradio@1.0-impl.so
 
   # GPS
