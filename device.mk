@@ -109,6 +109,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     su
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
