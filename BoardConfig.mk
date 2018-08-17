@@ -28,6 +28,7 @@ LOCAL_PATH := device/samsung/a3y17lte
 
 # Hidl
 DEVICE_MANIFEST_FILE := device/samsung/a3y17lte/configs/manifest/manifest.xml
+DEVICE_MATRIX_FILE := device/samsung/a3y17lte/configs/manifest/compatibility_matrix.xml
 
 # Properties
 TARGET_SYSTEM_PROP += $(LOCAL_PATH)/system.prop
